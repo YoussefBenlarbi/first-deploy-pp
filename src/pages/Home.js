@@ -6,7 +6,7 @@ import axios from 'axios';
 const Home = () => {
 	const [data, setData] = useState([]);
 	const loadData = async () => {
-		const response = await axios.get('https://benlarbi-app.herokuapp.com/api/get');
+		const response = await axios.get('https://benlarbi1.netlify.app//api/get');
         setData(response.data)
 	};
     useEffect(()=>{

@@ -8,7 +8,7 @@ const Home = () => {
 	const [data, seData] = useState([]);
 	// const [modalOpen, setModalOpen] = useState(false);
 	const loadData = async () => {
-		const response = await axios.get('https://benlarbi-app.herokuapp.com/api/get');
+		const response = await axios.get('https://benlarbi1.netlify.app//api/get');
 
 		seData(response.data);
 	};
