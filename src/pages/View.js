@@ -5,7 +5,7 @@ const View = () => {
 	const [user, setUser] = useState({});
 	const { id } = useParams();
 	useEffect(() => {
-		axios.get(`http://localhost:5000/api/get/${id}`).then((resp) => {
+		axios.get(`https://benlarbi-app.herokuapp.com/api/get/${id}`).then((resp) => {
 			setUser({ ...resp.data[0] });
 		});
 	}, [id]);
