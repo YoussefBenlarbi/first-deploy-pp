@@ -15,7 +15,7 @@ const AddEdit = () => {
 	const { id } = useParams();
 	useEffect(() => {
 		axios
-			.get(`https://benlarbi-app.herokuapp.com//api/get/${id}`)
+			.get(`https://benlarbi1.netlify.app/api/get/${id}`)
 			.then((res) => setState({ ...res.data[0] }));
 	}, [id]);
 	function HandleInputChange(e) {
@@ -29,7 +29,7 @@ const AddEdit = () => {
 		} else {
 			if (!id) {
 				axios
-					.post('https://benlarbi-app.herokuapp.com/api/post', {
+					.post('https://benlarbi1.netlify.app/api/post', {
 						nom,
 						email,
 						contact,
@@ -41,7 +41,7 @@ const AddEdit = () => {
 				toast.success('Stagiaire added succesfully');
 			} else {
 				axios
-					.put(`https://benlarbi-app.herokuapp.com//api/update/${id}`, {
+					.put(`https://https://benlarbi1.netlify.app/api/update/${id}`, {
 						nom,
 						email,
 						contact,
