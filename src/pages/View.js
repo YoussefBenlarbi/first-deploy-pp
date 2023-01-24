@@ -42,7 +42,7 @@ const View = () => {
 							</tr>
 						</tbody>
 					</table>
-					<button style={{ width: '50%' }} className="btn btn-dark">
+					<button style={{ width: '70%' }} className="btn btn-dark">
 						<Link to={'/'} style={{ textDecoration: 'none', color: 'white' }}>
 							Go back
 						</Link>
