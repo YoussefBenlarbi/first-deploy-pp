@@ -42,11 +42,11 @@ const View = () => {
 							</tr>
 						</tbody>
 					</table>
-					<Link to={'/'} style={{ textDecoration: 'none', color: 'white' }}>
-						<button style={{ width: '100%' }} className="btn btn-dark">
+					<button style={{ width: '100%' }} className="btn btn-dark">
+						<Link to={'/'} style={{ textDecoration: 'none', color: 'white' }}>
 							Go back
-						</button>
-					</Link>
+						</Link>
+					</button>
 				</div>
 				<div className="col-sm-3"></div>
 			</div>
