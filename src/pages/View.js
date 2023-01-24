@@ -5,13 +5,15 @@ const View = () => {
 	const [user, setUser] = useState({});
 	const { id } = useParams();
 	useEffect(() => {
-		axios.get(`https://benlarbi-app.herokuapp.com/api/get/${id}`).then((resp) => {
-			setUser({ ...resp.data[0] });
-		});
+		axios
+			.get(`https://benlarbi-app.herokuapp.com/api/get/${id}`)
+			.then((resp) => {
+				setUser({ ...resp.data[0] });
+			});
 	}, [id]);
-    console.log(user);
+	console.log(user);
 	return (
-		<div className="container " >
+		<div className="container ">
 			<div className="row mt-5">
 				<div className="col-sm-3"></div>
 				<div className="col-sm-6">
@@ -40,6 +42,11 @@ const View = () => {
 							</tr>
 						</tbody>
 					</table>
+					<Link to={'/'} style={{ textDecoration: 'none', color: 'white' }}>
+						<button style={{ width: '100%' }} className="btn btn-dark">
+							Go back
+						</button>
+					</Link>
 				</div>
 				<div className="col-sm-3"></div>
 			</div>
