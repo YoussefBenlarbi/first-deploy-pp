@@ -8,7 +8,7 @@ const Home = () => {
 	const [data, seData] = useState([]);
 	// const [modalOpen, setModalOpen] = useState(false);
 	const loadData = async () => {
-		const response = await axios.get('https://benlarbi1.netlify.app/api/get');
+		const response = await axios.get('https://benlarbi-app.herokuapp.com/api/get');
 
 		seData(response.data);
 	};
@@ -17,7 +17,7 @@ const Home = () => {
 	}, []);
 	const deleteStagiaire = (id) => {
 		if (window.confirm('Are you sure yoi want to delete trainee ?')) {
-			axios.delete(`https://benlarbi1.netlify.app/api/remove/${id}`);
+			axios.delete(`https://benlarbi-app.herokuapp.com/api/remove/${id}`);
 			toast.success('stagiaire is deleted succesfully .');
 			setTimeout(() => loadData(), 500);
 		} else {
