@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import Table from 'react-bootstrap/Table';
 // import Modal from './Modal';
 const Home = () => {
 	const [data, seData] = useState([]);
@@ -32,7 +33,7 @@ const Home = () => {
 				<div className="col-lg-8">
 					<h2>Home Page :</h2>{' '}
 					<div class="table-responsive">
-						<table className="table table-bordered border-dark table-striped text-center">
+						<Table responsive="sm" className="table table-bordered border-dark table-striped text-center">
 							<thead>
 								<tr
 									className="border-dark text-center"
@@ -71,7 +72,7 @@ const Home = () => {
 									);
 								})}
 							</tbody>
-						</table>
+						</Table>
 					</div>
 					<Link to="/addStagiaire">
 						<button className="btn btn-dark">Add Stagiaire</button>
