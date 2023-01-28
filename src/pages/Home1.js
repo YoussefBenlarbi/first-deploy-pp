@@ -19,10 +19,24 @@ const Home = () => {
 	const deleteStagiaire = (id) => {
 		if (window.confirm('Are you sure yoi want to delete trainee ?')) {
 			axios.delete(`https://benlarbi-app.herokuapp.com/api/remove/${id}`);
-			toast.success('stagiaire is deleted succesfully .');
+			toast.success('stagiaire is deleted succesfully .', {
+				autoClose: 1000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: false,
+				draggable: true,
+				progress: undefined,
+			});
 			setTimeout(() => loadData(), 500);
 		} else {
-			toast.error('operation failed');
+			toast.error('operation failed', {
+				autoClose: 1000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: false,
+				draggable: true,
+				progress: undefined,
+			});
 		}
 	};
 	return (
