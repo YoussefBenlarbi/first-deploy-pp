@@ -25,7 +25,14 @@ const AddEdit = () => {
 	function HandleSubmit(e) {
 		e.preventDefault();
 		if (!nom || !email || !contact) {
-			toast.error('tous les champs sont obligatoires ');
+			toast.error('tous les champs sont obligatoires ', {
+				autoClose: 1000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: false,
+				draggable: true,
+				progress: undefined,
+			});
 		} else {
 			if (!id) {
 				axios
@@ -37,8 +44,24 @@ const AddEdit = () => {
 					.then(() => {
 						setState({ nom: '', email: '', contact: '' });
 					})
-					.catch((err) => toast.error(err.response.data));
-				toast.success('Stagiaire added succesfully');
+					.catch((err) =>
+						toast.error(err.response.data, {
+							autoClose: 1000,
+							hideProgressBar: false,
+							closeOnClick: true,
+							pauseOnHover: false,
+							draggable: true,
+							progress: undefined,
+						})
+					);
+				toast.success('Stagiaire added succesfully', {
+					autoClose: 1000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: false,
+					draggable: true,
+					progress: undefined,
+				});
 			} else {
 				axios
 					.put(`https://benlarbi-app.herokuapp.com/api/update/${id}`, {
@@ -50,7 +73,14 @@ const AddEdit = () => {
 						setState({ nom: '', email: '', contact: '' });
 					})
 					.catch((err) => toast.error(err.response.data));
-				toast.success('Stagiaire added succesfully');
+				toast.success('Stagiaire added succesfully', {
+					autoClose: 1000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: false,
+					draggable: true,
+					progress: undefined,
+				});
 			}
 			setTimeout(() => navigate('/'), 500);
 		}
